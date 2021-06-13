@@ -1,0 +1,73 @@
+DROP DATABASE IF EXISTS compiuter;
+CREATE DATABASE IF NOT EXISTS compiuter;
+
+USE compiuter;
+
+CREATE TABLE IF NOT EXISTS empleados(
+cod_emp INT PRIMARY KEY AUTO_INCREMENT,
+nom_emp VARCHAR(50) NOT NULL,
+ape_emp VARCHAR(50) NOT NULL,
+ced_emp VARCHAR(8) UNIQUE NOT NULL,
+dir_emp VARCHAR(50) NOT NULL,
+tel_emp INT(11) NOT NULL,
+car_emp VARCHAR(10) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS clientes(
+cod_cli INT PRIMARY KEY AUTO_INCREMENT,
+nom_cli VARCHAR(50) NOT NULL,
+ape_cli VARCHAR(50) NOT NULL,
+ced_cli VARCHAR(8) UNIQUE NOT NULL,
+dir_cli VARCHAR(50) NOT NULL,
+tel_cli INT(11)NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS categorias(
+cod_cat INT PRIMARY KEY AUTO_INCREMENT,
+nom_cat VARCHAR(50) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS diagnosticos(
+cod_dia INT PRIMARY KEY AUTO_INCREMENT,
+fal_cli_dia VARCHAR(50) NOT NULL,
+fal_ini_dia VARCHAR(50) NOT NULL,
+sol_dia VARCHAR(8) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS equipos(
+cod_equ INT PRIMARY KEY AUTO_INCREMENT,
+ser_equ VARCHAR(50) NOT NULL,
+des_equ VARCHAR(50) NOT NULL,
+mar_equ VARCHAR(8) NOT NULL,
+fky_categorias INT NOT NULL,
+fky_diagnosticos INT NOT NULL,
+INDEX (fky_categorias),
+INDEX (fky_diagnosticos),
+FOREIGN KEY (fky_categorias) REFERENCES categorias(cod_cat),
+FOREIGN KEY (fky_diagnosticos) REFERENCES diagnosticos(cod_dia)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS pedidos(
+cod_ped INT PRIMARY KEY AUTO_INCREMENT,
+fec_ped DATE NOT NULL,
+fky_clientes INT(11) NOT NULL,
+fky_equipos INT NOT NULL,
+fky_empleados INT NOT NULL,
+INDEX (fky_clientes),
+INDEX (fky_equipos),
+INDEX (fky_empleados),
+FOREIGN KEY (fky_clientes) REFERENCES clientes(cod_cli),
+FOREIGN KEY (fky_equipos) REFERENCES equipos(cod_equ),
+FOREIGN KEY (fky_empleados) REFERENCES empleados(cod_emp)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS facturas(
+cod_fac INT PRIMARY KEY AUTO_INCREMENT,
+fec_fac DATE NOT NULL,
+mon_fac FLOAT(20) NOT NULL,
+div_fac VARCHAR(20) NOT NULL,
+des_fac VARCHAR(50) NOT NULL,
+fky_pedidos INT NOT NULL,
+INDEX (fky_pedidos),
+FOREIGN KEY (fky_pedidos) REFERENCES pedidos(cod_ped)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
