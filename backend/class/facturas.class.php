@@ -29,22 +29,6 @@ class facturas extends utilidad
 		return $this->run();
 	} // fin de create
 
-
-	function update()
-	{
-		$this->que_bda = "UPDATE facturas
-												SET
-													cod_fac='$this->cod_fac',
-													fec_fac='$this->fec_fac',
-													mon_fac='$this->mon_fac',
-													div_fac='$this->div_fac',
-													des_fac='$this->des_fac',
-												WHERE
-													cod_fac='$this->cod_fac';";
-
-		return $this->run();
-	} // fin de update
-
 	function getAll()
 	{
 		$this->que_bda = "SELECT * FROM facturas;";
