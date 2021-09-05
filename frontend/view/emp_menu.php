@@ -16,10 +16,10 @@ checkAdmin();
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Empleados</h3>
 				<div class="card-body">
-					<a class="btn btn-outline-primary btn-block" href="ado_registrar.php">Registrar</a>
-					<a class="btn btn-outline-primary btn-block" href="ado_listartodo.php">Listar</a>
-					<!-- <a class="btn btn-outline-primary btn-block" href="ado_filtrar.php">Filtrar</a>
-					<a class="btn btn-outline-primary btn-block" href="ado_listarpapelera.php">Papelera</a> -->
+					<a class="btn btn-outline-primary btn-block" href="emp_registrar.php">Registrar</a>
+					<a class="btn btn-outline-primary btn-block" href="emp_listartodo.php">Listar</a>
+					<!-- <a class="btn btn-outline-primary btn-block" href="emp_filtrar.php">Filtrar</a>
+					<a class="btn btn-outline-primary btn-block" href="emp_listarpapelera.php">Papelera</a> -->
 				</div>
 			</div>
 		</div>

@@ -9,12 +9,7 @@ class categorias extends utilidad
 
 	function create()
 	{
-		$this->que_bda = "INSERT INTO categorias
-												(cod_cat, 
-												nom_cat, 
-											VALUES
-												('$this->cod_cat', 
-												'$this->nom_cat');";
+		$this->que_bda = "INSERT INTO categorias (nom_cat) VALUES('$this->nom_cat');";
 
 		return $this->run();
 	} // fin de create
@@ -23,8 +18,7 @@ class categorias extends utilidad
 	{
 		$this->que_bda = "UPDATE categorias
 												SET
-													cod_cat='$this->cod_cat',
-													nom_cat='$this->nom_cat',
+													nom_cat='$this->nom_cat'
 												WHERE
 													cod_cat='$this->cod_cat';";
 
@@ -33,25 +27,21 @@ class categorias extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM categorias
-	;";
+		$this->que_bda = "SELECT * FROM categorias;";
 
 		return $this->run();
 	} // fin de getAll
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM categorias
-												WHERE cod_cat='$this->cod_cat;'";
+		$this->que_bda = "SELECT * FROM categorias WHERE cod_cat='$this->cod_cat;'";
 
 		return $this->run();
 	} // fin de getByCode
 
 	function delete()
 	{
-		$this->que_bda = "DELETE FROM categorias
-												WHERE
-													cod_cat='$this->cod_cat';";
+		$this->que_bda = "DELETE FROM categorias WHERE cod_cat='$this->cod_cat';";
 
 		return $this->run();
 	} // fin de delete

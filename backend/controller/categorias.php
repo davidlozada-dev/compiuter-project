@@ -13,11 +13,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_cat->resultado == false) {
 			$message = "la categoria que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_cat->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_registrar.php");
+			header("refresh:3; url=../../frontend/view/categorias.php");
 		} else {
 			$message = "Categoria registrado exitosamente";
 			$obj_cat->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_registrar.php");
+			header("refresh:1; url=../../frontend/view/categorias.php");
 		}
 		break;
 
@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_cat->resultado == false) {
 			$message = "la categoria que intenta actualizar puede que tenga información registrada en otra categoria en el sistema, por favor verifique";
 			$obj_cat->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:3; url=../../frontend/view/categorias.php");
 		} else {
 			$message = "Categoria actualizado exitosamente";
 			$obj_cat->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:1; url=../../frontend/view/categorias.php");
 		}
 		break;
 
@@ -45,6 +45,6 @@ switch ($_REQUEST["run"]) {
 			$message = "Categoria eliminado exitosamente";
 			$obj_cat->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		header("refresh:1; url=../../frontend/view/categorias.php");
 		break;
 }

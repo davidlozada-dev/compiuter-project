@@ -13,11 +13,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_emp->resultado == false) {
 			$message = "El empleado que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_emp->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_registrar.php");
+			header("refresh:3; url=../../frontend/view/emp_registrar.php");
 		} else {
 			$message = "Empleado registrado exitosamente";
 			$obj_emp->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_registrar.php");
+			header("refresh:1; url=../../frontend/view/emp_registrar.php");
 		}
 		break;
 
@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_emp->resultado == false) {
 			$message = "El empleado que intenta actualizar puede que tenga información registrada en otro empleado en el sistema, por favor verifique";
 			$obj_emp->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:3; url=../../frontend/view/emp_listartodo.php");
 		} else {
 			$message = "Usuario actualizado exitosamente";
 			$obj_emp->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:1; url=../../frontend/view/emp_listartodo.php");
 		}
 		break;
 
@@ -45,7 +45,7 @@ switch ($_REQUEST["run"]) {
 			$message = "Usuario eliminado exitosamente";
 			$obj_emp->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		header("refresh:1; url=../../frontend/view/emp_listartodo.php");
 		break;
 
 }

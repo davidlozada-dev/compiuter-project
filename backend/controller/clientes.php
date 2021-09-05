@@ -13,11 +13,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_cli->resultado == false) {
 			$message = "El cliente que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_cli->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_registrar.php");
+			header("refresh:3; url=../../frontend/view/cli_registrar.php");
 		} else {
 			$message = "cliente registrado exitosamente";
 			$obj_cli->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_registrar.php");
+			header("refresh:1; url=../../frontend/view/cli_registrar.php");
 		}
 		break;
 
@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_cli->resultado == false) {
 			$message = "El cliente que intenta actualizar puede que tenga información registrada en otro cliente en el sistema, por favor verifique";
 			$obj_cli->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:3; url=../../frontend/view/cli_listartodo.php");
 		} else {
 			$message = "cliente actualizado exitosamente";
 			$obj_cli->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:1; url=../../frontend/view/cli_listartodo.php");
 		}
 		break;
 
@@ -45,6 +45,6 @@ switch ($_REQUEST["run"]) {
 			$message = "cliente eliminado exitosamente";
 			$obj_cli->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		header("refresh:1; url=../../frontend/view/cli_listartodo.php");
 		break;
 }

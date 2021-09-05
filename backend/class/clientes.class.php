@@ -14,15 +14,13 @@ class clientes extends utilidad
 	function create()
 	{
 		$this->que_bda = "INSERT INTO clientes
-												(cod_cli, 
-												nom_cli, 
+												(nom_cli, 
 												ape_cli, 
 												ced_cli,
 												dir_cli, 
-												tel_cli, 
+												tel_cli)
 											VALUES
-												('$this->cod_cli', 
-												'$this->nom_cli', 
+												('$this->nom_cli', 
 												'$this->ape_cli', 
 												'$this->ced_cli',  
 												'$this->dir_cli',  
@@ -35,12 +33,11 @@ class clientes extends utilidad
 	{
 		$this->que_bda = "UPDATE clientes
 												SET
-													cod_cli='$this->cod_cli',
 													nom_cli='$this->nom_cli',
 													ape_cli='$this->ape_cli',
 													ced_cli='$this->ced_cli',
 													dir_cli='$this->dir_cli',
-													tel_cli='$this->tel_cli',
+													tel_cli='$this->tel_cli'
 												WHERE
 													cod_cli='$this->cod_cli';";
 
@@ -56,17 +53,14 @@ class clientes extends utilidad
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM clientes
-												WHERE cod_cli='$this->cod_cli;'";
+		$this->que_bda = "SELECT * FROM clientes WHERE cod_cli='$this->cod_cli;'";
 
 		return $this->run();
 	} // fin de getByCode
 
 	function delete()
 	{
-		$this->que_bda = "DELETE FROM clientes
-												WHERE
-													cod_cli='$this->cod_cli';";
+		$this->que_bda = "DELETE FROM clientes WHERE cod_cli='$this->cod_cli';";
 
 		return $this->run();
 	} // fin de delete

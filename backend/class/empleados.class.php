@@ -10,25 +10,26 @@ class empleados extends utilidad
 	public $ced_emp;
 	public $dir_emp;
 	public $tel_emp;
+	public $cor_emp;
 	public $car_emp;
 
 	function create()
 	{
 		$this->que_bda = "INSERT INTO empleados
-												(cod_emp, 
-												nom_emp, 
+												(nom_emp, 
 												ape_emp, 
 												ced_emp,
 												dir_emp, 
 												tel_emp, 
-												car_emp, 
+												cor_emp, 
+												car_emp)
 											VALUES
-												('$this->cod_emp', 
-												'$this->nom_emp', 
+												('$this->nom_emp', 
 												'$this->ape_emp', 
 												'$this->ced_emp',  
-												'$this->dir_emp',  
-												'$this->tel_emp', 
+												'$this->dir_emp',
+												'$this->tel_emp',
+												'$this->cor_emp',
 												'$this->car_emp');";
 
 		return $this->run();
@@ -38,13 +39,13 @@ class empleados extends utilidad
 	{
 		$this->que_bda = "UPDATE empleados
 												SET
-													cod_emp='$this->cod_emp',
 													nom_emp='$this->nom_emp',
 													ape_emp='$this->ape_emp',
 													ced_emp='$this->ced_emp',
 													dir_emp='$this->dir_emp',
 													tel_emp='$this->tel_emp',
-													car_emp='$this->car_emp',
+													cor_emp='$this->cor_emp',
+													car_emp='$this->car_emp'
 												WHERE
 													cod_emp='$this->cod_emp';";
 

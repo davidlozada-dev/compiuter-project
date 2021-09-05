@@ -33,7 +33,7 @@ class utilidad
 
 	public function run()
 	{
-		// echo $this->que_bda;
+		echo $this->que_bda;
 		return $this->con_bda->query($this->que_bda);
 	}
 
@@ -56,9 +56,9 @@ class utilidad
 
 	public function message($message)
 	{
-		require_once("../../frontend/view/tema_controladores.php");
+		require_once("../../frontend/view/theme_controller.php");
 
-		headerr("Comprobando...");
+		head("Comprobando...");
 
 		if ($this->resultado == true) {
 			echo "
