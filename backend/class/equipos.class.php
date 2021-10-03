@@ -9,25 +9,25 @@ class equipos extends utilidad
 	public $des_equ;
 	public $mar_equ;
 	public $fky_categorias;
-	public $fky_diagnosticos;
+	public $fky_clientes;
 
 	function create()
 	{
 
+		$serial = strtoupper($this->ser_equ);
+
 		$this->que_bda = "INSERT INTO equipos
-													(cod_equ, 
-													ser_equ, 
-													des_equ, 
+													(ser_equ,
+													des_equ,
 													mar_equ,
-													fky_categorias, 
-													fky_diagnosticos, 
+													fky_categorias,
+													fky_clientes)
 												VALUES
-													('$this->cod_equ', 
-													'$this->ser_equ', 
-													'$this->des_equ', 
-													'$this->mar_equ',  
-													'$this->fky_categorias',  
-													'$this->fky_diagnosticos');";
+													('$serial',
+													'$this->des_equ',
+													'$this->mar_equ',
+													'$this->fky_categorias',
+													'$this->fky_clientes');";
 
 		return $this->run();
 	} // fin de create
@@ -42,7 +42,7 @@ class equipos extends utilidad
 													des_equ='$this->des_equ',
 													mar_equ='$this->mar_equ',
 													fky_categorias='$this->fky_categorias',
-													fky_diagnosticos='$this->fky_diagnosticos',
+													fky_clientes='$this->fky_clientes',
 													
 												WHERE
 													cod_equ='$this->cod_equ';";
@@ -64,6 +64,13 @@ class equipos extends utilidad
 		return $this->run();
 	} // fin de getByCode
 
+	function getByClient()
+	{
+		$this->que_bda = "SELECT * FROM equipos WHERE fky_clientes='$this->fky_clientes;'";
+
+		return $this->run();
+	} // fin de getByClient
+
 	function delete()
 	{
 		$this->que_bda = "DELETE FROM equipos
@@ -80,7 +87,7 @@ class equipos extends utilidad
 		$filter3 = ($this->des_equ != "") ? "AND des_equ LIKE '%$this->des_equ%'" : "";
 		$filter4 = ($this->mar_equ != "") ? "AND mar_equ='$this->mar_equ'" : "";
 		$filter5 = ($this->fky_categorias != "") ? "AND fky_categorias='$this->fky_categorias'" : "";
-		$filter6 = ($this->fky_diagnosticos != "") ? "AND fky_diagnosticos LIKE '%$this->fky_diagnosticos%'" : "";
+		$filter6 = ($this->fky_clientes != "") ? "AND fky_clientes LIKE '%$this->fky_clientes%'" : "";
 
 		$this->que_bda = "SELECT * FROM equipos WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6;";
 

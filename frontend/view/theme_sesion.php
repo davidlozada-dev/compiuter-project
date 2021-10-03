@@ -70,9 +70,11 @@ function head($titulo)
 
 	// if ($_SESSION['cargo'] == 'Administrador') {
 		echo "
+								<a href='emp_menu.php' class='nav-link active'>Empleados</a>
 								<a href='categorias.php' class='nav-link active'>Categorias</a>
 								<a href='cli_menu.php' class='nav-link active'>Clientes</a>
-								<a href='emp_menu.php' class='nav-link active'>Empleados</a>
+								<a href='equipos.php' class='nav-link active'>Equipos</a>
+								<a href='ped_menu.php' class='nav-link active'>Pedidos</a>
 				";
 	// }
 

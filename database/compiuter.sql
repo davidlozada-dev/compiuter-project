@@ -28,24 +28,27 @@ cod_cat INT PRIMARY KEY AUTO_INCREMENT,
 nom_cat VARCHAR(50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS diagnosticos(
-cod_dia INT PRIMARY KEY AUTO_INCREMENT,
-fal_cli_dia VARCHAR(50) NOT NULL,
-fal_ini_dia VARCHAR(50) NOT NULL,
-sol_dia VARCHAR(8) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 CREATE TABLE IF NOT EXISTS equipos(
 cod_equ INT PRIMARY KEY AUTO_INCREMENT,
 ser_equ VARCHAR(50) NOT NULL,
 des_equ VARCHAR(50) NOT NULL,
 mar_equ VARCHAR(8) NOT NULL,
 fky_categorias INT NOT NULL,
-fky_diagnosticos INT NOT NULL,
+fky_clientes INT NOT NULL,
 INDEX (fky_categorias),
-INDEX (fky_diagnosticos),
+INDEX (fky_clientes),
 FOREIGN KEY (fky_categorias) REFERENCES categorias(cod_cat),
-FOREIGN KEY (fky_diagnosticos) REFERENCES diagnosticos(cod_dia)
+FOREIGN KEY (fky_clientes) REFERENCES clientes(cod_cli)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS diagnosticos(
+cod_dia INT PRIMARY KEY AUTO_INCREMENT,
+fal_cli_dia VARCHAR(50) NOT NULL,
+fal_ini_dia VARCHAR(50) NOT NULL,
+sol_dia VARCHAR(8) NOT NULL,
+fky_equipos INT NOT NULL,
+INDEX (fky_equipos),
+FOREIGN KEY (fky_equipos) REFERENCES equipos(cod_equ)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS pedidos(

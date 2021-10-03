@@ -58,6 +58,13 @@ class clientes extends utilidad
 		return $this->run();
 	} // fin de getByCode
 
+	function getByCedula()
+	{
+		$this->que_bda = "SELECT * FROM clientes WHERE ced_cli='$this->ced_cli';";
+
+		return $this->run();
+	} // fin de getByCode
+
 	function delete()
 	{
 		$this->que_bda = "DELETE FROM clientes WHERE cod_cli='$this->cod_cli';";

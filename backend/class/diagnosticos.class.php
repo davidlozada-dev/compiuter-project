@@ -8,6 +8,7 @@ class diagnosticos extends utilidad
 	public $fal_cli_dia;
 	public $fal_ini_dia;
 	public $sol_dia;
+	public $fky_equipos;
 
 	function create()
 	{
@@ -16,11 +17,13 @@ class diagnosticos extends utilidad
 												fal_cli_dia, 
 												fal_ini_dia, 
 												sol_dia,
+												fky_equipos,
 											VALUES
 												('$this->cod_dia', 
 												'$this->fal_cli_dia', 
 												'$this->fal_ini_dia', 
-												'$this->sol_dia');";
+												'$this->sol_dia', 
+												'$this->fky_equipos');";
 
 		return $this->run();
 	} // fin de create
@@ -33,6 +36,7 @@ class diagnosticos extends utilidad
 													fal_cli_dia='$this->fal_cli_dia',
 													fal_ini_dia='$this->fal_ini_dia',
 													sol_dia='$this->sol_dia',
+													fky_equipos='$this->fky_equipos',
 												WHERE
 													cod_dia='$this->cod_dia';";
 
@@ -69,6 +73,7 @@ class diagnosticos extends utilidad
 		$filter2 = ($this->fal_cli_dia != "") ? "AND fal_cli_dia LIKE '%$this->fal_cli_dia%'" : "";
 		$filter3 = ($this->fal_ini_dia != "") ? "AND fal_ini_dia LIKE '%$this->fal_ini_dia%'" : "";
 		$filter4 = ($this->sol_dia != "") ? "AND sol_dia='$this->sol_dia'" : "";
+		$filter4 = ($this->fky_equipos != "") ? "AND fky_equipos='$this->fky_equipos'" : "";
 
 		$this->que_bda = "SELECT * FROM diagnosticos WHERE 1=1 $filter1 $filter2 $filter3 $filter4;";
 
