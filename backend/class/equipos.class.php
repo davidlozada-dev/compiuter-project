@@ -59,7 +59,7 @@ class equipos extends utilidad
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM equipos WHERE cod_equ='$this->cod_equ;'";
+		$this->que_bda = "SELECT * FROM equipos WHERE cod_equ='$this->cod_equ';";
 
 		return $this->run();
 	} // fin de getByCode

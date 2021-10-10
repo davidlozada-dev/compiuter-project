@@ -9,22 +9,27 @@ class facturas extends utilidad
 	public $mon_fac;
 	public $div_fac;
 	public $des_fac;
-	public $fky_pedidos;
+	public $fky_empleados;
+	public $fky_diagnosticos;
 
 	function create()
 	{
+		$fec_fac = date("Y-m-d");
+
 		$this->que_bda = "INSERT INTO facturas
-													(cod_fac, 
-													fec_fac, 
+													(fec_fac, 
 													mon_fac, 
 													div_fac,
-													des_fac, 
+													des_fac,
+													fky_empleados,
+													fky_diagnosticos) 
 												VALUES
-													('$this->cod_fac', 
-													'$this->fec_fac', 
+													('$fec_fac', 
 													'$this->mon_fac', 
 													'$this->div_fac',  
-													'$this->des_fac');";
+													'$this->des_fac',  
+													'$this->fky_empleados',  
+													'$this->fky_diagnosticos');";
 
 		return $this->run();
 	} // fin de create

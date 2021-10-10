@@ -13,7 +13,7 @@ $empleados = $obj_emp->extractData();
 
 head("Modificar Empleado");
 
-// check("Empleados", 1);
+check('Empleados');
 
 ?>
 
@@ -21,13 +21,13 @@ head("Modificar Empleado");
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="emp_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Modificar Empleado</h2>
 				<form action="../../backend/controller/empleados.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<input type="hidden" name="cod_emp" id="cod_emp" value="<?php echo $empleados['cod_emp']; ?>">
 									<label for="nombre">Nombre:</label>
@@ -35,53 +35,71 @@ head("Modificar Empleado");
 									<small id="nombreDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="apellido">Apellido:</label>
 									<input type="text" name="ape_emp" id="apellido" placeholder="Apellido:" value="<?php echo $empleados['ape_emp']; ?>" class="form-control">
 									<small id="apellidoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="cedula">Cédula:</label>
 									<input type="text" name="ced_emp" id="cedula" placeholder="Cédula:" pattern="[0-9]+" value="<?php echo $empleados['ced_emp']; ?>" class="form-control">
 									<small id="cedulaDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="telefono">Teléfono:</label>
 									<input type="text" name="tel_emp" id="telefono" placeholder="Teléfono:" pattern="[0-9]+" value="<?php echo $empleados['tel_emp']; ?>" class="form-control">
 									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-12">
+							<div class="col-12 col-xl-12">
 								<div class="form-group">
 									<label for="correo">Correo:</label>
 									<input type="email" name="cor_emp" id="correo" placeholder="Correo:" value="<?php echo $empleados['cor_emp']; ?>" class="form-control">
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-12">
+							<!-- <div class="col-12 col-xl-12">
+								<div class="form-group">
+									<label for="contrasena">Contraseña:</label>
+									<input type="password" name="cla_emp" id="contrasena" placeholder="Contraseña:" value="<?php echo $empleados['cla_emp']; ?>" class="form-control">
+									<small id="contrasenaDiv" class="invalid-feedback"></small>
+								</div>
+							</div> -->
+							<div class="col-12 col-xl-12">
 								<div class="form-group">
 									<label for="direccion">Dirección:</label>
 									<input type="text" name="dir_emp" id="direccion" placeholder="Dirección:" value="<?php echo $empleados['dir_emp']; ?>" class="form-control">
 									<small id="direccionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-12">
-								<div class="form-group">
-									<label for="cargo">Cargo:</label>
-									<select name="car_emp" id="cargo" class="form-control">
-										<?php $seleccionado = ($empleados["car_emp"] == "Empleado1") ? "selected" : ""; ?>
-										<option <?php echo $seleccionado; ?> value="Empleado1">Empleado 1</option>
-										<?php $seleccionado = ($empleados["car_emp"] == "Empleado2") ? "selected" : ""; ?>
-										<option <?php echo $seleccionado; ?> value="Empleado2">Empleado 2</option>
-									</select>
-									<small id="cargoDiv" class="invalid-feedback"></small>
+							<?php
+							if ($empleados['cod_emp'] != '1') {
+							?>
+
+								<div class="col-12 col-xl-12">
+									<div class="form-group">
+										<label for="cargo">Cargo:</label>
+										<select name="car_emp" id="cargo" class="form-control">
+											<?php $seleccionado = ($empleados["car_emp"] == "Administrador") ? "selected" : ""; ?>
+											<option <?php echo $seleccionado; ?> value="Administrador">Administrador</option>
+											<?php $seleccionado = ($empleados["car_emp"] == "Cajero") ? "selected" : ""; ?>
+											<option <?php echo $seleccionado; ?> value="Cajero">Cajero</option>
+											<?php $seleccionado = ($empleados["car_emp"] == "Tecnico") ? "selected" : ""; ?>
+											<option <?php echo $seleccionado; ?> value="Tecnico">Tecnico</option>
+										</select>
+										<small id="cargoDiv" class="invalid-feedback"></small>
+									</div>
 								</div>
-							</div>
+
+							<?php
+							}
+							?>
+
 						</div>
 					</div>
 					<div class="card-footer d-flex justify-content-between">
@@ -94,7 +112,7 @@ head("Modificar Empleado");
 	</div>
 </div>
 
-<script src="../js/validaciones.js"></script>
+
 
 <?php
 

@@ -8,16 +8,18 @@ $obj_cat->puntero = $obj_cat->getAll();
 
 head("Categorias");
 
+check('Categorias');
+
 ?>
 
 <!-- Formulario -->
-<div class="container-fluid px-5 pt-5 pb-5 mb-5">
+<div class="container-fluid pt-5 pb-5 mb-5">
 	<h2 class="text-center pb-4">Categorias</h2>
-	<div class="row justify-content-center px-5">
-		<div class="col-12 col-md-4">
+	<div class="row justify-content-center">
+		<div class="col-12 col-xl-4 mb-5">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar</h2>
-				<form action="../../backend/controller/categorias.php" method="POST" class="was-validation" id="formulario" novalidate>
+				<form action="../../backend/controller/categorias.php" method="POST" class="was-validation mb-0" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
@@ -36,13 +38,13 @@ head("Categorias");
 				</form>
 			</div>
 		</div>
-		<div class="col-12 col-md-8">
+		<div class="col-12 col-xl-8">
 			<div class="row justify-content-center">
 				<div class="col-12">
 					<div class="card-header">
 						<div class="row">
-							<div class="col-6">
-								<a class="btn btn-danger" href="cat_reportes/cat_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+							<div class="col-12">
+								<a class="btn btn-danger" href="./cat_reportes/cat_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 									por PDF</i></a>
 							</div>
 						</div>
@@ -98,7 +100,7 @@ head("Categorias");
 	</div>
 </div>
 
-<!-- <script src="../js/validaciones.js"></script> -->
+
 
 <?php
 

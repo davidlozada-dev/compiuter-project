@@ -35,6 +35,19 @@ switch ($_REQUEST["run"]) {
 		}
 		break;
 
+	case 'changePassword':
+		$obj_emp->resultado = $obj_emp->changePassword();
+
+		if ($obj_emp->resultado == false) {
+			$message = "Hubo un error al actualizar la contraseña";
+			$obj_emp->message($message) == false;
+		} else {
+			$message = "Contraseña actualizada exitosamente";
+			$obj_emp->message($message) == true;
+		}
+		header("refresh:1; url=../../frontend/view/emp_inicio.php");
+		break;
+
 	case 'delete':
 		$obj_emp->resultado = $obj_emp->delete();
 
@@ -47,5 +60,4 @@ switch ($_REQUEST["run"]) {
 		}
 		header("refresh:1; url=../../frontend/view/emp_listartodo.php");
 		break;
-
 }

@@ -8,7 +8,7 @@ $obj_cli->puntero = $obj_cli->getAll();
 
 head("Lista de Clientes");
 
-// check("Clientes", 1);
+check('Clientes');
 
 ?>
 
@@ -20,7 +20,7 @@ head("Lista de Clientes");
 		<div class="col-12 py-2">
 			<div class="card-header">
 				<div class="row">
-					<div class="col-6">
+					<div class="col-12">
 						<a class="btn btn-danger" href="cli_reportes/cli_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
@@ -71,13 +71,10 @@ head("Lista de Clientes");
 															</div>
 														</div>
 													</div>
-										";
-						}
-						echo "
 												</tr>
 											</form>
 										";
-
+						}
 						?>
 					</tbody>
 				</table>

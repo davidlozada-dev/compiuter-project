@@ -15,13 +15,16 @@ class empleados extends utilidad
 
 	function create()
 	{
+		$clave = sha1($this->cla_emp);
+
 		$this->que_bda = "INSERT INTO empleados
 												(nom_emp, 
 												ape_emp, 
 												ced_emp,
 												dir_emp, 
 												tel_emp, 
-												cor_emp, 
+												cor_emp,
+												cla_emp,
 												car_emp)
 											VALUES
 												('$this->nom_emp', 
@@ -30,6 +33,7 @@ class empleados extends utilidad
 												'$this->dir_emp',
 												'$this->tel_emp',
 												'$this->cor_emp',
+												'$clave',
 												'$this->car_emp');";
 
 		return $this->run();
@@ -37,6 +41,8 @@ class empleados extends utilidad
 
 	function update()
 	{
+		// $clave = sha1($this->cla_emp);
+
 		$this->que_bda = "UPDATE empleados
 												SET
 													nom_emp='$this->nom_emp',
@@ -45,6 +51,7 @@ class empleados extends utilidad
 													dir_emp='$this->dir_emp',
 													tel_emp='$this->tel_emp',
 													cor_emp='$this->cor_emp',
+													-- cla_emp='$clave',
 													car_emp='$this->car_emp'
 												WHERE
 													cod_emp='$this->cod_emp';";
@@ -66,19 +73,18 @@ class empleados extends utilidad
 		return $this->run();
 	} // fin de updatePassword */
 
-	/* function changePassword()
+	function changePassword()
 	{
 		$clave = sha1($this->cla_emp);
 
 		$this->que_bda = "UPDATE empleados
 												SET 
-													cla_emp='$clave',
-													act_emp='$act_emp'
+													cla_emp='$clave'
 												WHERE
 													cod_emp='$this->cod_emp';";
 
 		return $this->run();
-	} // fin de changePassword */
+	} // fin de changePassword
 
 	function getAll()
 	{
@@ -89,26 +95,24 @@ class empleados extends utilidad
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM empleados WHERE cod_emp='$this->cod_emp;'";
+		$this->que_bda = "SELECT * FROM empleados WHERE cod_emp='$this->cod_emp';";
 
 		return $this->run();
 	} // fin de getByCode
 
-	/* function getSession($cor_emp, $cla_emp)
+	function getSession($cor_emp, $cla_emp)
 	{
 		$clave = sha1($cla_emp);
 
-		$this->que_bda = "SELECT cod_emp, cor_emp, cla_emp, cod_car, est_emp, bas_emp 
+		$this->que_bda = "SELECT cod_emp, cor_emp, cla_emp, car_emp 
 												FROM 
 													empleados 
 												WHERE 
 													cor_emp='$cor_emp' AND 
-													cla_emp='$clave' AND 
-													est_emp='A' AND 
-													bas_emp='A';";
+													cla_emp='$clave';";
 
 		return $this->run();
-	} // fin de getSession */
+	} // fin de getSession
 
 	function delete()
 	{

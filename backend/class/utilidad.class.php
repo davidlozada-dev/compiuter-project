@@ -33,7 +33,7 @@ class utilidad
 
 	public function run()
 	{
-		echo $this->que_bda;
+		//echo $this->que_bda;
 		return $this->con_bda->query($this->que_bda);
 	}
 

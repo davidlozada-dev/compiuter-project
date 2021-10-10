@@ -13,11 +13,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_dia->resultado == false) {
 			$message = "El diagnotico que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_dia->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_registrar.php");
+			header("refresh:3; url=../../frontend/view/dia_registrar.php");
 		} else {
 			$message = "Diagnostico registrado exitosamente";
 			$obj_dia->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_registrar.php");
+			header("refresh:1; url=../../frontend/view/dia_registrar.php");
 		}
 		break;
 
@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_dia->resultado == false) {
 			$message = "El diagnotico que intenta actualizar puede que tenga información registrada en otro diagnotico en el sistema, por favor verifique";
 			$obj_dia->message($message) == false;
-			header("refresh:3; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:3; url=../../frontend/view/dia_listartodo.php");
 		} else {
 			$message = "Diagnostico actualizado exitosamente";
 			$obj_dia->message($message) == true;
-			header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+			header("refresh:1; url=../../frontend/view/dia_listartodo.php");
 		}
 		break;
 
@@ -45,6 +45,6 @@ switch ($_REQUEST["run"]) {
 			$message = "Diagnostico eliminado exitosamente";
 			$obj_dia->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		header("refresh:1; url=../../frontend/view/dia_listartodo.php");
 		break;
 }

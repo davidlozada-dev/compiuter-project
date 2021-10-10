@@ -7,6 +7,8 @@ require_once("../../backend/class/categorias.class.php");
 
 head("Equipos");
 
+check("Equipos");
+
 $obj_cli = new clientes();
 
 if (isset($_POST['ced_cli'])) {
@@ -25,10 +27,10 @@ if (isset($_POST['ced_cli'])) {
 ?>
 
 <!-- Formulario -->
-<div class="container-fluid px-5 pt-5 pb-5 mb-5">
+<div class="container-fluid pt-5 pb-5 mb-5">
 	<h2 class="text-center pb-4">Equipos</h2>
-	<div class="row justify-content-center px-5">
-		<div class="col-12 col-md-4">
+	<div class="row justify-content-center">
+		<div class="col-12 col-xl-4 mb-5">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar</h2>
 				<div class="card-body">
@@ -39,11 +41,11 @@ if (isset($_POST['ced_cli'])) {
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<label for="cedula">Cedula:</label>
-									<input type="text" name="ced_cli" id="cedula" class="form-control" placeholder="Cedula" value="<?php if (isset($cliente['ced_cli'])) {
+									<label for="cedula2">Cedula:</label>
+									<input type="text" name="ced_cli" id="cedula2" class="form-control" placeholder="Cedula" value="<?php if (isset($cliente['ced_cli'])) {
 																																																										echo $cliente['ced_cli'];
 																																																									} ?>" maxlength="10" />
-									<small id="cedulaDiv" class="invalid-feedback"></small>
+									<small id="cedulaDiv2" class="invalid-feedback"></small>
 								</div>
 							</div>
 
@@ -51,16 +53,16 @@ if (isset($_POST['ced_cli'])) {
 								<a href="des_registrar.php" class="btn btn-success">Limpiar</a>
 								<button type="submit" class="ml-3 btn btn-primary btn-block">Buscar Cedula</button>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
-									<label for="nombre">Nombre:</label>
-									<input type="text" id="nombre" class="form-control" placeholder="Nombre" value="<?php echo $cliente['nom_cli']; ?>" readonly />
+									<label for="nombreNada">Nombre:</label>
+									<input type="text" id="nombreNada" class="form-control" placeholder="Nombre" value="<?php echo $cliente['nom_cli']; ?>" readonly />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
-									<label for="apellido">Apellido:</label>
-									<input type="text" id="apellido" class="form-control" placeholder="Apellido" value="<?php echo $cliente['ape_cli']; ?>" readonly />
+									<label for="apellidoNada">Apellido:</label>
+									<input type="text" id="apellidoNada" class="form-control" placeholder="Apellido" value="<?php echo $cliente['ape_cli']; ?>" readonly />
 								</div>
 							</div>
 						</div>
@@ -86,15 +88,16 @@ if (isset($_POST['ced_cli'])) {
 								</div>
 								<div class="col-12">
 									<div class="form-group">
-										<label for="nombre">Marca:</label>
-										<input type="text" name="mar_equ" id="nombre" class="form-control" placeholder="Marca" />
-										<small id="nombreDiv" class="invalid-feedback"></small>
+										<label for="marca">Marca:</label>
+										<input type="text" name="mar_equ" id="marca" class="form-control" placeholder="Marca" />
+										<small id="marcaDiv" class="invalid-feedback"></small>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="descripcion">Descripcion:</label>
-										<input type="text" name="des_equ" id="descripcion" class="form-control" placeholder="Descripcion" />
+										<textarea class="form-control" id="descripcion" name="des_equ" rows="3" placeholder="Descripcion" maxlength="100"></textarea>
+										<small id="descripcionDiv" class="invalid-feedback"></small>
 									</div>
 								</div>
 								<div class="col-12" id="categoriaCaja">
@@ -130,12 +133,12 @@ if (isset($_POST['ced_cli'])) {
 			</div>
 		</div>
 
-		<div class="col-12 col-md-8">
+		<div class="col-12 col-xl-8">
 			<div class="row justify-content-center">
 				<div class="col-12">
 					<div class="card-header">
 						<div class="row">
-							<div class="col-6">
+							<div class="col-12">
 								<a class="btn btn-danger" href="equ_reportes/equ_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 									por PDF</i></a>
 							</div>
@@ -151,7 +154,6 @@ if (isset($_POST['ced_cli'])) {
 									<th>Descripcion</th>
 									<th>Categoria</th>
 									<th>Cliente</th>
-									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -181,7 +183,6 @@ if (isset($_POST['ced_cli'])) {
 												<td>$equipos[des_equ]</td>
 												<td>$categoria[nom_cat]</td>
 												<td>$cliente[nom_cli] $cliente[ape_cli]</td>
-												<td><a class='btn btn-warning' href='equ_modificar.php?cod_equ=$equipos[cod_equ]'><i class='fas fa-edit'></i></a></td>
 												<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$equipos[cod_equ]'><i class='fas fa-trash'></i></button></td>
 													<div class='modal fade' id='modalDelete$equipos[cod_equ]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>
@@ -212,7 +213,7 @@ if (isset($_POST['ced_cli'])) {
 		</div>
 	</div>
 
-	<!-- <script src="../js/validaciones.js"></script> -->
+
 
 	<?php
 

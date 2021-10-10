@@ -53,7 +53,7 @@ class clientes extends utilidad
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM clientes WHERE cod_cli='$this->cod_cli;'";
+		$this->que_bda = "SELECT * FROM clientes WHERE cod_cli='$this->cod_cli';";
 
 		return $this->run();
 	} // fin de getByCode

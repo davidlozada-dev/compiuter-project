@@ -3,10 +3,8 @@
 function head($titulo)
 {
 	$posicion1 = '';
-	$posicion2 = '';
 
 	if ($titulo === 'Iniciar sesión') $posicion1 = 'active';
-	else $posicion2 = 'active';
 
 
 	echo "
@@ -23,9 +21,6 @@ function head($titulo)
 			</head>
 
 			<body class='m-0 p-0'>
-
-				<!-- screenUp -->
-				<span class='screenUp' id='screenUp'><i class='fas fa-arrow-circle-up'></i></span>
 
 				<!-- Nav -->
 				<header>
@@ -52,7 +47,6 @@ function head($titulo)
 						<div class='collapse navbar-collapse justify-content-end text-center' id='navbarNavAltMarkup'>
 							<div class='navbar-nav'>
 								<a class='nav-link $posicion1' href='login.php'>Iniciar sesión</a>
-								<a class='nav-link $posicion2' href='register.php'>Registrarse</a>
 							</div>
 						</div>
 					</nav>
@@ -66,8 +60,6 @@ function footer()
 	echo "
 				<script src='../js/jquery-3.5.1.min.js'></script>
 				<script src='../css/bootstrap/js/bootstrap.bundle.min.js'></script>
-				<script src='../js/screenUp.js'></script>
-
 			</body>
 				
 		</html>
