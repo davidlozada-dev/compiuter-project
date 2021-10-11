@@ -32,7 +32,7 @@ check('Facturas');
 			<div class="card-header">
 				<div class="row">
 					<div class="col-12">
-						<a class="btn btn-danger" href="cli_reportes/cli_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+						<a class="btn btn-danger" href="fac_reportes/fac_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
 				</div>

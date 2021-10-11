@@ -1,7 +1,7 @@
 <?php
 
 require_once("theme_sesion.php");
-require_once( "../../backend/class/diagnosticos.class.php");
+require_once("../../backend/class/diagnosticos.class.php");
 require_once("../../backend/class/empleados.class.php");
 require_once("../../backend/class/equipos.class.php");
 require_once("../../backend/class/clientes.class.php");
@@ -30,7 +30,7 @@ check('Diagnosticos');
 			<div class="card-header">
 				<div class="row">
 					<div class="col-12">
-						<a class="btn btn-danger" href="cli_reportes/cli_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+						<a class="btn btn-danger" href="dia_reportes/dia_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
 				</div>
@@ -44,7 +44,8 @@ check('Diagnosticos');
 							<th>Falla cliente</th>
 							<th>Falla inicial</th>
 							<th>Categoria</th>
-							<th>Equipo</th>
+							<th>Marca</th>
+							<th>Serial</th>
 							<th>Cliente</th>
 							<th>Eliminar</th>
 						</tr>
@@ -77,7 +78,8 @@ check('Diagnosticos');
 												<td>$diagnosticos[fal_cli_dia]</td>
 												<td>$diagnosticos[fal_ini_dia]</td>
 												<td>$categoria[nom_cat]</td>
-												<td>$equipo[ser_equ] - $equipo[mar_equ]</td>
+												<td>$equipo[ser_equ]</td>
+												<td>$equipo[mar_equ]</td>
 												<td>$cliente[nom_cli] $cliente[ape_cli]</td>";
 
 							if ($_SESSION['cargo'] === 'Administrador') {

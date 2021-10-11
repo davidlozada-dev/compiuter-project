@@ -3,24 +3,25 @@
 <head>
 	<meta charset='UTF-8'>
 	<title>Lista de Categorias</title>
-	<link rel='stylesheet' href='../../css/estilospdf.css'>
+	<style>
+		.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
+	</style>
 </head>
 
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan="1" style='text-align: left;'><!-- <img src='../../img/logo3.png' width='250px'> --></th>
-			<th class='head' colspan="1" style='text-align: right;'>
+			<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
+			<th class='head' colspan='5' style='text-align: right;'>
 				<h3>Lista de Categorias</h3>
 			</th>
-			<th class='head'></th>
 		</tr>
 		<tr class='nada'>
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class="th">Código</th>
-			<th class="th">Nombre</th>
+			<th class="th" colspan='3'>Código</th>
+			<th class="th" colspan='3'>Nombre</th>
 		</tr>
 		<?php
 		require_once("../../../backend/class/categorias.class.php");
@@ -31,8 +32,8 @@
 		while (($categorias = $obj_cat->extractData()) > 0) {
 			echo "
 						<tr class='tr'>
-							<td class='td'>$categorias[cod_cat]</td>
-							<td class='td'>$categorias[nom_cat]</td
+							<td class='td' colspan='3'>$categorias[cod_cat]</td>
+							<td class='td' colspan='3'>$categorias[nom_cat]</td
 						</tr>
 			";
 		}
