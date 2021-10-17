@@ -40,7 +40,7 @@ check('Diagnosticos');
 					<thead>
 						<tr>
 							<th>Código</th>
-							<th>Atendio</th>
+							<th>Atendió</th>
 							<th>Falla cliente</th>
 							<th>Falla inicial</th>
 							<th>Categoria</th>

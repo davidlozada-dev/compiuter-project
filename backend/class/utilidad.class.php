@@ -11,6 +11,7 @@ class utilidad
 	public  $puntero;
 	public  $contador;
 	public  $resultado;
+	public  $url;
 
 	public function __construct()
 	{
@@ -74,5 +75,10 @@ class utilidad
 		}
 
 		footer();
+	}
+
+	public function localhost()
+	{
+		return $this->url = 'http://localhost/Server/compiuter-project/';
 	}
 }

@@ -74,7 +74,7 @@ check('Empleados');
 										<option value="" selected>Seleccione un cargo</option>
 										<option value=" Administrador">Administrador</option>
 										<option value="Cajero">Cajero</option>
-										<option value="Tecnico">Tecnico</option>
+										<option value="Tecnico">Técnico</option>
 									</select>
 									<small id="cargoDiv" class="invalid-feedback"></small>
 								</div>

@@ -46,15 +46,4 @@ class categorias extends utilidad
 		return $this->run();
 	} // fin de delete
 
-	function filter()
-	{
-		$filter1 = ($this->cod_cat != "") ? "AND cod_cat LIKE '%$this->cod_cat%'" : "";
-		$filter2 = ($this->nom_cat != "") ? "AND nom_cat LIKE '%$this->nom_cat%'" : "";
-
-		$this->que_bda = "SELECT * FROM categorias
-	 WHERE 1=1 $filter1 $filter2;";
-
-		return $this->run();
-	} // fin de filter
-
 }

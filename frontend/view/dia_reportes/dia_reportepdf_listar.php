@@ -21,7 +21,7 @@
 		</tr>
 		<tr class='tr'>
 			<th class="th" colspan='1'>Código</th>
-			<th class="th" colspan='1'>Atendio</th>
+			<th class="th" colspan='1'>Atendió</th>
 			<th class="th" colspan='1'>Falla cliente</th>
 			<th class="th" colspan='1'>Falla inicial</th>
 			<th class="th" colspan='1'>Categoria</th>

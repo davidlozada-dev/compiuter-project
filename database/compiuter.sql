@@ -15,7 +15,7 @@ tel_emp VARCHAR(14) NOT NULL,
 car_emp VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO empleados (nom_emp, ape_emp, ced_emp, cor_emp, cla_emp, dir_emp, tel_emp, car_emp) VALUES ('Jesus', 'Orejarena', '29545545', 'jesusorejarena@gmail.com', 'f48b363db986208aa09fc95bdeb565426368224d', 'La concordia', '04147528826', 'Administrador');
+INSERT INTO empleados (nom_emp, ape_emp, ced_emp, cor_emp, cla_emp, dir_emp, tel_emp, car_emp) VALUES ('Naomi', 'Guerrero', '29649292', 'guerreronaomi83@gmail.com', 'f48b363db986208aa09fc95bdeb565426368224d', 'La concordia', '04124202563', 'Administrador');
 
 CREATE TABLE IF NOT EXISTS clientes(
 cod_cli INT PRIMARY KEY AUTO_INCREMENT,
@@ -26,8 +26,8 @@ dir_cli VARCHAR(50) NOT NULL,
 tel_cli VARCHAR(14) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO clientes (nom_cli, ape_cli, ced_cli, dir_cli, tel_cli) VALUES ('Javier', 'Orejarena', '29580182', 'La concordia', '04147035000');
-INSERT INTO clientes (nom_cli, ape_cli, ced_cli, dir_cli, tel_cli) VALUES ('Naomi', 'Guerrero', '12345678', 'La rotaria', '04147035458');
+-- INSERT INTO clientes (nom_cli, ape_cli, ced_cli, dir_cli, tel_cli) VALUES ('Javier', 'Orejarena', '29580182', 'La concordia', '04147035000');
+-- INSERT INTO clientes (nom_cli, ape_cli, ced_cli, dir_cli, tel_cli) VALUES ('Naomi', 'Guerrero', '12345678', 'La rotaria', '04147035458');
 
 
 CREATE TABLE IF NOT EXISTS categorias(
@@ -54,8 +54,8 @@ FOREIGN KEY (fky_categorias) REFERENCES categorias(cod_cat),
 FOREIGN KEY (fky_clientes) REFERENCES clientes(cod_cli)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO equipos (ser_equ, des_equ, mar_equ, fky_categorias, fky_clientes) VALUES ('ASASD', 'Nueva', 'Lenovo', '1', '1');
-INSERT INTO equipos (ser_equ, des_equ, mar_equ, fky_categorias, fky_clientes) VALUES ('A123SASD', 'Nueva', 'Lenovo', '2', '1');
+-- INSERT INTO equipos (ser_equ, des_equ, mar_equ, fky_categorias, fky_clientes) VALUES ('ASASD', 'Nueva', 'Lenovo', '1', '1');
+-- INSERT INTO equipos (ser_equ, des_equ, mar_equ, fky_categorias, fky_clientes) VALUES ('A123SASD', 'Nueva', 'Lenovo', '2', '1');
 
 CREATE TABLE IF NOT EXISTS diagnosticos(
 cod_dia INT PRIMARY KEY AUTO_INCREMENT,
@@ -76,7 +76,7 @@ FOREIGN KEY (fky_clientes) REFERENCES clientes(cod_cli),
 FOREIGN KEY (fky_empleados) REFERENCES empleados(cod_emp)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO diagnosticos (fal_cli_dia, fal_ini_dia, fec_ent_dia, fec_sal_dia, fky_clientes, fky_equipos, est_dia, fky_empleados) VALUES ('No prende (Negra)', 'Ram', '2021-10-10', '2021-10-20', '1', '1', 'A', '1');
+-- INSERT INTO diagnosticos (fal_cli_dia, fal_ini_dia, fec_ent_dia, fec_sal_dia, fky_clientes, fky_equipos, est_dia, fky_empleados) VALUES ('No prende (Negra)', 'Ram', '2021-10-10', '2021-10-20', '1', '1', 'A', '1');
 
 CREATE TABLE IF NOT EXISTS facturas(
 cod_fac INT PRIMARY KEY AUTO_INCREMENT,

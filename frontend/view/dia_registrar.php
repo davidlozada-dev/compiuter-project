@@ -116,7 +116,7 @@ if (isset($_POST['ced_cli'])) {
 								<div class="col-12">
 									<div class="form-group">
 										<label for="fechaSalida">Fecha de salida:</label>
-										<input type="date" id="fechaSalida" name='fec_sal_dia' class="form-control" />
+										<input type="date" id="fechaSalida" name='fec_sal_dia' class="form-control" min='<?php echo date("Y-m-d"); ?>' />
 										<small id="fechaSalidaDiv" class="invalid-feedback"></small>
 									</div>
 								</div>

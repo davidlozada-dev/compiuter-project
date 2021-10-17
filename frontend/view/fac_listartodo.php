@@ -42,8 +42,8 @@ check('Facturas');
 					<thead>
 						<tr>
 							<th>Código</th>
-							<th>Atendio (Cajero)</th>
-							<th>Atendio (Tecnico)</th>
+							<th>Atendió (Cajero)</th>
+							<th>Atendió (Técnico)</th>
 							<th>Categoria</th>
 							<th>Marca</th>
 							<th>Serial</th>
@@ -54,6 +54,7 @@ check('Facturas');
 							<th>Divisa</th>
 							<th>Descripción</th>
 							<th>Cliente</th>
+							<th>Factura PDF</th>
 							<th>Eliminar</th>
 						</tr>
 					</thead>
@@ -104,7 +105,9 @@ check('Facturas');
 												<td>$cliente[nom_cli] $cliente[ape_cli]</td>";
 							if ($_SESSION['cargo'] === 'Administrador') {
 
-								echo "<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$facturas[cod_fac]'><i class='fas fa-trash'></i></button></td>
+								echo "
+												<td><a class='btn btn-danger' href='fac_reportepdf.php?cod_fac=$facturas[cod_fac]'><i class='fas fa-file-pdf'></i></a></td>
+												<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$facturas[cod_fac]'><i class='fas fa-trash'></i></button></td>
 												<div class='modal fade' id='modalDelete$facturas[cod_fac]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 													<div class='modal-dialog modal-sm'>
 														<div class='modal-content'>

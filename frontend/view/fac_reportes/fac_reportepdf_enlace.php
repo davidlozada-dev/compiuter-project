@@ -1,6 +1,7 @@
 <?php
 // Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
 require_once '../../../library/dompdf/autoload.inc.php';
+require_once '../../../backend/class/empleados.class.php';
 
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
@@ -8,7 +9,11 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
-$archivo = "http://localhost/Server/compiuter-project/frontend/view/fac_reportes/fac_reportepdf_listar.php";
+$obj_emp = new empleados;
+
+$obj_emp->localhost();
+
+$archivo = $obj_emp->url . "frontend/view/fac_reportes/fac_reportepdf_listar.php";
 
 $html = file_get_contents($archivo);
 

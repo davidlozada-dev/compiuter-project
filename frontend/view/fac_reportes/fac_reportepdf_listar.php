@@ -21,8 +21,8 @@
 		</tr>
 		<tr class='tr'>
 			<th class="th" colspan='1'>Código</th>
-			<th class="th" colspan='1'>Atendio (Cajero)</th>
-			<th class="th" colspan='1'>Atendio (Tecnico)</th>
+			<th class="th" colspan='1'>Atendió (Cajero)</th>
+			<th class="th" colspan='1'>Atendió (Técnico)</th>
 			<th class="th" colspan='1'>Categoria</th>
 			<th class="th" colspan='1'>Marca</th>
 			<th class="th" colspan='1'>Serial</th>

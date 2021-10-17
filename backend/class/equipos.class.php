@@ -80,18 +80,4 @@ class equipos extends utilidad
 		return $this->run();
 	} // fin de delete
 
-	function filter()
-	{
-		$filter1 = ($this->cod_equ != "") ? "AND cod_equ LIKE '%$this->cod_equ%'" : "";
-		$filter2 = ($this->ser_equ != "") ? "AND ser_equ LIKE '%$this->ser_equ%'" : "";
-		$filter3 = ($this->des_equ != "") ? "AND des_equ LIKE '%$this->des_equ%'" : "";
-		$filter4 = ($this->mar_equ != "") ? "AND mar_equ='$this->mar_equ'" : "";
-		$filter5 = ($this->fky_categorias != "") ? "AND fky_categorias='$this->fky_categorias'" : "";
-		$filter6 = ($this->fky_clientes != "") ? "AND fky_clientes LIKE '%$this->fky_clientes%'" : "";
-
-		$this->que_bda = "SELECT * FROM equipos WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6;";
-
-		return $this->run();
-	} // fin de filter
-
 }

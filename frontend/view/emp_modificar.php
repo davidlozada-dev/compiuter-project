@@ -63,13 +63,13 @@ check('Empleados');
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<!-- <div class="col-12 col-xl-12">
+							<div class="col-12 col-xl-12">
 								<div class="form-group">
 									<label for="contrasena">Contraseña:</label>
-									<input type="password" name="cla_emp" id="contrasena" placeholder="Contraseña:" value="<?php echo $empleados['cla_emp']; ?>" class="form-control">
+									<input type="password" name="cla_emp" id="contrasena" placeholder="Contraseña:" class="form-control">
 									<small id="contrasenaDiv" class="invalid-feedback"></small>
 								</div>
-							</div> -->
+							</div>
 							<div class="col-12 col-xl-12">
 								<div class="form-group">
 									<label for="direccion">Dirección:</label>
@@ -90,7 +90,7 @@ check('Empleados');
 											<?php $seleccionado = ($empleados["car_emp"] == "Cajero") ? "selected" : ""; ?>
 											<option <?php echo $seleccionado; ?> value="Cajero">Cajero</option>
 											<?php $seleccionado = ($empleados["car_emp"] == "Tecnico") ? "selected" : ""; ?>
-											<option <?php echo $seleccionado; ?> value="Tecnico">Tecnico</option>
+											<option <?php echo $seleccionado; ?> value="Tecnico">Técnico</option>
 										</select>
 										<small id="cargoDiv" class="invalid-feedback"></small>
 									</div>
