@@ -11,8 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-			<th class='head' colspan='5' style='text-align: right;'>
+			<th class='head' colspan='6' style='text-align: left;'>
 				<h3>Lista de Categorias</h3>
 			</th>
 		</tr>

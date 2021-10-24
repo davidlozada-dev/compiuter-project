@@ -68,9 +68,7 @@ $dompdf->loadHtml("
 			<body>
 				<table>
 					<tr class='head'>
-						<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-						<th class='head' colspan='2' style='text-align: center;'><h3>Factura <br> N° $cod_fac</h3></th>
-						<th class='head' colspan='2'></th>
+						<th class='head' colspan='5' style='text-align: center;'><h3>Factura <br> N° $cod_fac</h3></th>
 					</tr>
 					<tr class='nada'>
 						<th class='nada' colspan='5'></th>

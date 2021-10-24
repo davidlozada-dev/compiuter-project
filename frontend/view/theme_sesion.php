@@ -45,7 +45,7 @@ function head($titulo)
 					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
 						<a href='emp_inicio.php' class='navbar-brand px-5'>
-							Logo <!-- <img src='../img/logo2.png' width='150'><img src='../img/logo2.png' width='150'> -->
+							<img src='../img/logo.png' width='150'>
 						</a>
 
 						<!-- Menu de hamburguesa -->
