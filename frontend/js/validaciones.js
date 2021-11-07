@@ -49,18 +49,6 @@
 					let precio = document.getElementById('precio')?.value;
 					let divisa = document.getElementById('divisa')?.value;
 
-					/* let genero = document.getElementById('genero')?.value;
-					let nacionalidad = document.getElementById('nacionalidad')?.value;
-					let rif = document.getElementById('rif')?.value;
-					let rifCompleto = document.getElementById('rifCompleto')?.value;
-					let pregunta1 = document.getElementById('pregunta1')?.value;
-					let respuesta1 = document.getElementById('respuesta1')?.value;
-					let pregunta2 = document.getElementById('pregunta2')?.value;
-					let respuesta2 = document.getElementById('respuesta2')?.value;
-					let cantidad = document.getElementById('cantidad')?.value;
-					let proveedor = document.getElementById('proveedor')?.value;
-					let producto = document.getElementById('producto')?.value; */
-
 					// Validacion de alfanumerico
 					if (alfanumerico != undefined) {
 						if (alfanumerico.length == 0) {
@@ -285,151 +273,6 @@
 							resetearError('divisaDiv', 'divisa');
 						}
 					}
-
-					/* // Validacion de genero
-					if (genero != undefined) {
-						if (genero.length == 0) {
-							mensaje(e, 'generoDiv', 'genero', 'Seleccione el género');
-						} else {
-							resetearError('generoDiv', 'genero');
-						}
-					}
-
-					// Validacion de nacionalidad
-					if (nacionalidad != undefined) {
-						if (nacionalidad.length == 0) {
-							mensaje(e, 'nacionalidadDiv', 'nacionalidad', 'Ingrese la nacionalidad');
-						} else {
-							resetearError('nacionalidadDiv', 'nacionalidad');
-						}
-					}
-
-					// Validacion de rif
-					if (rif != undefined) {
-						if (rif.length == 0) {
-							mensaje(e, 'rifDiv', 'rif', 'Ingrese un RIF');
-						} else if (rif.length > 10) {
-							mensaje(e, 'rifDiv', 'rif', 'Ingrese un RIF válido');
-						} else if (rifValidar(rif) === false) {
-							mensaje(e, 'rifDiv', 'rif', 'Ingrese un RIF válido');
-						} else {
-							resetearError('rifDiv', 'rif');
-						}
-					}
-
-					// Validacion de rifCompleto
-					if (rifCompleto != undefined) {
-						if (rifCompleto.length == 0) {
-							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF');
-						} else if (rifCompleto.length > 12) {
-							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF válido');
-						} else if (rifCompletoValidar(rifCompleto) === false) {
-							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF válido');
-						} else {
-							resetearError('rifCompletoDiv', 'rifCompleto');
-						}
-					}
-
-
-					// Validacion de pregunta1
-					if (pregunta1 != undefined) {
-						if (pregunta1.length == 0) {
-							mensaje(e, 'pregunta1Div', 'pregunta1', 'Seleccione su primera pregunta');
-						} else {
-							resetearError('pregunta1Div', 'pregunta1');
-						}
-					}
-
-					// Validacion de respuesta1
-					if (respuesta1 != undefined) {
-						if (respuesta1.length == 0) {
-							mensaje(e, 'respuesta1Div', 'respuesta1', 'Ingrese su respuesta');
-						} else {
-							resetearError('respuesta1Div', 'respuesta1');
-						}
-					}
-
-					// Validacion de pregunta2
-					if (pregunta2 != undefined) {
-						if (pregunta2.length == 0) {
-							mensaje(e, 'pregunta2Div', 'pregunta2', 'Seleccione su segunda pregunta');
-						} else {
-							resetearError('pregunta2Div', 'pregunta2');
-						}
-					}
-
-					// Validacion de respuesta2
-					if (respuesta2 != undefined) {
-						if (respuesta2.length == 0) {
-							mensaje(e, 'respuesta2Div', 'respuesta2', 'Ingrese su respuesta');
-						} else {
-							resetearError('respuesta2Div', 'respuesta2');
-						}
-					}
-
-					// Validacion de cargo
-					if (cargo != undefined) {
-						if (cargo.length == 0) {
-							mensaje(e, 'cargoDiv', 'cargo', 'Seleccione un cargo');
-						} else {
-							resetearError('cargoDiv', 'cargo');
-						}
-					}
-
-					// Validacion de cantidad
-					if (cantidad != undefined) {
-						if (cantidad.length == 0) {
-							mensaje(e, 'cantidadDiv', 'cantidad', 'Ingrese la cantidad');
-						} else if (numericoValidar(cantidad) === false) {
-							mensaje(e, 'cantidadDiv', 'cantidad', 'Solo caracteres numericos');
-						} else {
-							resetearError('cantidadDiv', 'cantidad');
-						}
-					}
-
-					// Validacion de proveedor
-					if (proveedor != undefined) {
-						if (proveedor.length == 0) {
-							mensaje(e, 'proveedorDiv', 'proveedor', 'Seleccione un proveedor');
-						} else {
-							resetearError('proveedorDiv', 'proveedor');
-						}
-					}
-
-					// Validacion de producto
-					if (producto != undefined) {
-						if (producto.length == 0) {
-							mensaje(e, 'productoDiv', 'producto', 'Seleccione un producto');
-						} else {
-							resetearError('productoDiv', 'producto');
-						}
-					}
-
-					// Validacion de instagram
-					if (instagram != undefined) {
-						if (instagram.length == 0) {
-							mensaje(e, 'instagramDiv', 'instagram', 'Ingrese el Instagram');
-						} else if (instagram.length > 29) {
-							mensaje(e, 'instagramDiv', 'instagram', 'El nombre de usuario es muy largo');
-						} else if (instagramValidar(instagram) === false) {
-							mensaje(e, 'instagramDiv', 'instagram', 'Ingrese un nombre de usuario valido');
-						} else {
-							resetearError('instagramDiv', 'instagram');
-						}
-					}
-
-					// Validacion de twitter
-					if (twitter != undefined) {
-						if (twitter.length == 0) {
-							mensaje(e, 'twitterDiv', 'twitter', 'Ingrese el Twitter');
-						} else if (twitter.length > 15) {
-							mensaje(e, 'twitterDiv', 'twitter', 'El nombre de usuario es muy largo');
-						} else if (twitterValidar(twitter) === false) {
-							mensaje(e, 'twitterDiv', 'twitter', 'Ingrese un nombre de usuario valido');
-						} else {
-							resetearError('twitterDiv', 'twitter');
-						}
-					} */
 				},
 				false
 			);
@@ -468,26 +311,6 @@ function alfanumericoValidar(texto) {
 function numericoValidar(texto) {
 	const numericoExpresion = /[0-9]/;
 	return numericoExpresion.test(texto);
-}
-
-function rifCompletoValidar(texto) {
-	const cedulaExpresion = /^[JGVEP][-][0-9]{8}[-][0-9]{1}$/;
-	return cedulaExpresion.test(texto);
-}
-
-function rifValidar(texto) {
-	const cedulaExpresion = /([0-9]{8})|([-][0-9]{1})$/;
-	return cedulaExpresion.test(texto);
-}
-
-function instagramValidar(texto) {
-	const instagramExpresion = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/;
-	return instagramExpresion.test(texto);
-}
-
-function twitterValidar(texto) {
-	const twitterExpresion = /(\w{4,15})\b/;
-	return twitterExpresion.test(texto);
 }
 
 function mensaje(e, elem1, elem2, mensaje) {

@@ -62,6 +62,28 @@ check('Empleados');
 							</div>
 							<div class="col-12">
 								<div class="form-group">
+									<label for="repetirContrasena">Repite la contraseña:</label>
+									<input type="password" id="repetirContrasena" class="form-control" placeholder="Repite la contraseña" />
+									<small id="repetirContrasenaDiv" class="invalid-feedback"></small>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="alert alert-success">
+									<b>La contraseña debe de cumplir con estos requisitos minimos:</b>
+									<br>
+									- Debe de tener entre 8-20 caracteres.
+									<br>
+									- Un carácter en mayúscula.
+									<br>
+									- Un carácter en miniscula.
+									<br>
+									- Un carácter especial. Permitidos <strong>.*/#$%&amp;¡!_\-,@:;?¿</strong>
+									<br>
+									- Al menos un digito.
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-group">
 									<label for="direccion">Dirección:</label>
 									<input type="text" name="dir_emp" id="direccion" class="form-control" placeholder="Dirección" />
 									<small id="direccionDiv" class="invalid-feedback"></small>
@@ -69,7 +91,7 @@ check('Empleados');
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<label for="cargo">Carga:</label>
+									<label for="cargo">Cargo:</label>
 									<select class="custom-select" name="car_emp" id="cargo">
 										<option value="" selected>Seleccione un cargo</option>
 										<option value=" Administrador">Administrador</option>

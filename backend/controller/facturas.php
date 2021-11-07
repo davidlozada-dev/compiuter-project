@@ -21,7 +21,7 @@ switch ($_REQUEST["run"]) {
 			$obj_fac->message($message) == false;
 			header("refresh:3; url=../../frontend/view/fac_registrar.php");
 		} else {
-			$message = "factura registrado exitosamente";
+			$message = "Factura registrado exitosamente";
 			$obj_fac->message($message) == true;
 			header("refresh:1; url=../../frontend/view/fac_registrar.php");
 		}
@@ -35,7 +35,7 @@ switch ($_REQUEST["run"]) {
 			$message = "Problemas para eliminar la factura";
 			$obj_fac->message($message) == false;
 		} else {
-			$message = "factura eliminado exitosamente";
+			$message = "Factura eliminado exitosamente";
 			$obj_fac->message($message) == true;
 		}
 		header("refresh:1; url=../../frontend/view/fac_listartodo.php");

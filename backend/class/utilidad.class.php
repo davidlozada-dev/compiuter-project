@@ -79,6 +79,6 @@ class utilidad
 
 	public function localhost()
 	{
-		return $this->url = 'http://localhost:8088/Server-Local/compiuter-project/';
+		return $this->url = 'http://localhost/Server/compiuter-project/';
 	}
 }

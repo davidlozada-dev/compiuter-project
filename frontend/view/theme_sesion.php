@@ -42,10 +42,10 @@ function head($titulo)
 
 				<!-- Nav -->
 				<header>
-					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+					<nav class='navbar navbar-expand-lg navbar-light shadow-lg mb-5'>
 						<!-- Nombre de la App -->
 						<a href='emp_inicio.php' class='navbar-brand px-5'>
-							<img src='../img/logo.png' width='150'>
+							<img src='../img/logo-sin-fondo.png' width='250'>
 						</a>
 
 						<!-- Menu de hamburguesa -->
@@ -92,7 +92,7 @@ function head($titulo)
 	}
 
 	echo "
-								<a href='cerrar_sesion.php' class='nav-link text-light btn btn-sesion'><i class='fas fa-power-off'></i></a>
+								<a href='cerrar_sesion.php' class='nav-link btn btn-sesion'><i class='fas fa-power-off'></i></a>
 							</div>
 						</div>
 					</nav>

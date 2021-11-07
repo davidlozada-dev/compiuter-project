@@ -8,14 +8,14 @@ cod_emp INT PRIMARY KEY AUTO_INCREMENT,
 nom_emp VARCHAR(50) NOT NULL,
 ape_emp VARCHAR(50) NOT NULL,
 ced_emp VARCHAR(8) UNIQUE NOT NULL,
-cor_emp VARCHAR(355) UNIQUE NOT NULL,
-cla_emp VARCHAR(355) NULL,
+cor_emp VARCHAR(100) UNIQUE NOT NULL,
+cla_emp VARCHAR(100) NULL,
 dir_emp VARCHAR(50) NOT NULL,
 tel_emp VARCHAR(14) NOT NULL,
 car_emp VARCHAR(20) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO empleados (nom_emp, ape_emp, ced_emp, cor_emp, cla_emp, dir_emp, tel_emp, car_emp) VALUES ('Naomi', 'Guerrero', '29649292', 'guerreronaomi83@gmail.com', 'f48b363db986208aa09fc95bdeb565426368224d', 'La concordia', '04124202563', 'Administrador');
+INSERT INTO empleados (nom_emp, ape_emp, ced_emp, cor_emp, cla_emp, dir_emp, tel_emp, car_emp) VALUES ('Naomi', 'Guerrero', '29649292', 'guerreronaomi83@gmail.com', '17e751ac320d788c8dae3315999e62ed1f6bf7df', 'La concordia', '04124202563', 'Administrador');
 
 CREATE TABLE IF NOT EXISTS clientes(
 cod_cli INT PRIMARY KEY AUTO_INCREMENT,

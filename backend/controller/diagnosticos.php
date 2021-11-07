@@ -21,20 +21,6 @@ switch ($_REQUEST["run"]) {
 		}
 		break;
 
-	case 'update':
-		$obj_dia->resultado = $obj_dia->update();
-
-		if ($obj_dia->resultado == false) {
-			$message = "El diagnotico que intenta actualizar puede que tenga información registrada en otro diagnotico en el sistema, por favor verifique";
-			$obj_dia->message($message) == false;
-			header("refresh:3; url=../../frontend/view/dia_listartodo.php");
-		} else {
-			$message = "Diagnostico actualizado exitosamente";
-			$obj_dia->message($message) == true;
-			header("refresh:1; url=../../frontend/view/dia_listartodo.php");
-		}
-		break;
-
 	case 'delete':
 		$obj_dia->resultado = $obj_dia->delete();
 

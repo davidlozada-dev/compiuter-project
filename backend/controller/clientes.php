@@ -15,7 +15,7 @@ switch ($_REQUEST["run"]) {
 			$obj_cli->message($message) == false;
 			header("refresh:3; url=../../frontend/view/cli_registrar.php");
 		} else {
-			$message = "cliente registrado exitosamente";
+			$message = "Cliente registrado exitosamente";
 			$obj_cli->message($message) == true;
 			header("refresh:1; url=../../frontend/view/cli_registrar.php");
 		}
@@ -29,7 +29,7 @@ switch ($_REQUEST["run"]) {
 			$obj_cli->message($message) == false;
 			header("refresh:3; url=../../frontend/view/cli_listartodo.php");
 		} else {
-			$message = "cliente actualizado exitosamente";
+			$message = "Cliente actualizado exitosamente";
 			$obj_cli->message($message) == true;
 			header("refresh:1; url=../../frontend/view/cli_listartodo.php");
 		}
@@ -42,7 +42,7 @@ switch ($_REQUEST["run"]) {
 			$message = "Problemas para eliminar el cliente";
 			$obj_cli->message($message) == false;
 		} else {
-			$message = "cliente eliminado exitosamente";
+			$message = "Cliente eliminado exitosamente";
 			$obj_cli->message($message) == true;
 		}
 		header("refresh:1; url=../../frontend/view/cli_listartodo.php");

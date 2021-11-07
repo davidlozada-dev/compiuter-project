@@ -21,20 +21,6 @@ switch ($_REQUEST["run"]) {
 		}
 		break;
 
-	case 'update':
-		$obj_equ->resultado = $obj_equ->update();
-
-		if ($obj_equ->resultado == false) {
-			$message = "El equipo que intenta actualizar puede que tenga información registrada en otro equipo en el sistema, por favor verifique";
-			$obj_equ->message($message) == false;
-			header("refresh:3; url=../../frontend/view/equipos.php");
-		} else {
-			$message = "Equipo actualizado exitosamente";
-			$obj_equ->message($message) == true;
-			header("refresh:1; url=../../frontend/view/equipos.php");
-		}
-		break;
-
 	case 'delete':
 		$obj_equ->resultado = $obj_equ->delete();
 

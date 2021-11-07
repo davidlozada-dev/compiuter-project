@@ -9,8 +9,11 @@ head("Iniciar sesión");
 <!-- Formulario -->
 <div class="container p-3">
 	<div class="row justify-content-center">
+		<div class="col-12 mb-5 justify-content-center text-center">
+			<img src='../img/logo-sin-fondo.png' width='600'>
+		</div>
 		<div class="col-12 col-xl-4">
-			<div class="card rounded">
+			<div class="card rounded shadow-lg">
 				<h2 class="card-title text-center pt-4">Iniciar Sesión</h2>
 				<div class="card-body">
 					<form action="../../backend/controller/sesion.php" method="POST" class="was-validation" novalidate>
@@ -30,7 +33,7 @@ head("Iniciar sesión");
 								<input type="password" name="cla_emp" id="contrasena" class="form-control" placeholder="Contraseña" />
 							</div>
 							<div class="py-1">
-								<button class="btn btn-outline-primary btn-block" name="run" value="session">Iniciar sesión</button>
+								<button class="btn btn-primary btn-block" name="run" value="session">Iniciar sesión</button>
 							</div>
 						</div>
 					</form>
